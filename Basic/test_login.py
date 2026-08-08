@@ -9,6 +9,7 @@ class TestLogin:
     username_id_textbox = "login-email"
     password_id_textbox = "login-password"
     login_submit_button_id = "login-submit"
+    verify_dashboard = "//h2"
 
     def test_login(self):
         #start the driver and launch the website
@@ -22,6 +23,10 @@ class TestLogin:
         self.driver.find_element(By.ID, self.username_id_textbox).send_keys("melomazibuko8@gmail.com")
         self.driver.find_element(By.ID, self.password_id_textbox).send_keys("Mwelase@1031")
         self.driver.find_element(By.ID, self.login_submit_button_id).click()
+
+        wait.until(EC.visibility_of_element_located((By.XPATH, self.verify_dashboard))).is_displayed()
+
+        self.driver.close()
 
 
 
