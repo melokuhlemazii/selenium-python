@@ -26,7 +26,7 @@ class TestLogin:
 
         wait.until(EC.visibility_of_element_located((By.XPATH, self.verify_dashboard))).is_displayed()
 
-        self.driver.close()
+        #self.driver.close()
 
 
 
